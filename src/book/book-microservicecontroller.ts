@@ -43,7 +43,7 @@ export class BookMicroServiceController {
   }
 
   @EventPattern('book_deleted')
-  async remove(@Param('id') id: number) {
+  async remove(id: number) {
     return this.bookService.remove(id);
   }
 }
