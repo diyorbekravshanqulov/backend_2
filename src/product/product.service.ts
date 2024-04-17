@@ -29,7 +29,10 @@ export class ProductService {
     });
   }
 
-  remove(id: number) {
-    return this.productModel.findOneAndDelete({ id });
+  async remove(id: number) {
+    await this.productModel.findOneAndDelete({ id });
+    return {
+      message: 'successfully removed mongo',
+    };
   }
 }
